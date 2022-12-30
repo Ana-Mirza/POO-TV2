@@ -1,8 +1,6 @@
 package program.actions.database.observers;
 
-import program.pages.Movies;
 import program.util.Database;
-import program.util.Movie;
 import program.util.User;
 import program.util.dependencies.Notification;
 
