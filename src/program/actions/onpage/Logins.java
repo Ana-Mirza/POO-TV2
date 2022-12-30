@@ -30,7 +30,7 @@ public final class Logins extends Feature implements Action {
     private Database database;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public Logins(final ActionsInput input) {
         super(input);
         credentials = new Credentials(input.getCredentials());
@@ -66,7 +66,7 @@ public final class Logins extends Feature implements Action {
     public void visit(final Login page) {
         int index = nameDoesNotExists(credentials, database.getUsersData());
 
-        // check if name exists in database
+        /* check if name exists in database */
         if (index < 0) {
             ErrorOutput.set(node);
             database.setCurrentPage(PageFactory.createPage(
@@ -74,18 +74,18 @@ public final class Logins extends Feature implements Action {
             return;
         }
 
-        // set user logged and current page
+        /* set user logged and current page */
         database.setCurrentUser(database.getUsersData().get(index));
         database.setCurrentPage(PageFactory.createPage(
                 "homepage autentificat", database));
         database.getCurrentPage().setCurrentUser(database.getCurrentUser());
 
-        // set user movie list by removing banned movies
+        /* set user movie list by removing banned movies */
         database.setUserMovies(new ArrayList<>(database.getMoviesData()));
         database.getUserMovies().removeIf(
                 (movie) -> movieBanned(database.getCurrentPage(), movie));
 
-        // set output
+        /* set output */
         StandardOutput.set(node, database.getCurrentPage());
     }
 
@@ -149,7 +149,7 @@ public final class Logins extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page
+        /* visit page */
         this.database = data;
         data.getCurrentPage().accept(this);
         output.add(node);
@@ -163,11 +163,11 @@ public final class Logins extends Feature implements Action {
      * @return true if credentials are incorrect
      */
     private int nameDoesNotExists(final Credentials credentials, final ArrayList<User> users) {
-        // check if name exists in database
+        /* check if name exists in database */
         for (int i = 0; i < users.size(); i++) {
             User user = users.get(i);
 
-            // return index of user in list of users
+            /* return index of user in list of users */
             if (user.getCredentials().getName().equals(credentials.getName())
                     && user.getCredentials().getPassword().equals(credentials.getPassword())) {
                 return i;

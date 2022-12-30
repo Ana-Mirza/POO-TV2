@@ -16,7 +16,7 @@ public abstract class Feature {
         page = input.getPage();
     }
 
-    // getters and setters
+    /* getters and setters */
     public final String getType() {
         return type;
     }

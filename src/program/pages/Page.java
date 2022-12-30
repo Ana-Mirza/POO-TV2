@@ -13,7 +13,7 @@ public abstract class Page {
     private ArrayList<String> accesiblePages;
     private ArrayList<String> actionsPermitted;
 
-    // constructors
+    /* constructors */
     public Page(final String name) {
         this.name = name;
         currentUser = new User();
@@ -38,7 +38,7 @@ public abstract class Page {
         actionsPermitted = new ArrayList<>();
     }
 
-    // getters and setters
+    /* getters and setters */
     public final String getName() {
         return name;
     }

@@ -41,6 +41,12 @@ public final class Recommendation implements Observer {
 
     }
 
+    /**
+     * Method creates a sorted list of genres based on likes
+     * of movies given by user
+     * @param database stores status of program
+     * @return array list of sorted genres based on likes
+     */
     private ArrayList<String> getSortedGenres(final Database database) {
         ArrayList<String> genres = new ArrayList<>();
 
@@ -66,6 +72,13 @@ public final class Recommendation implements Observer {
         return genres;
     }
 
+    /**
+     * Method creates a sorted list of all movies
+     * in the database visible to user based on total
+     * number of likes
+     * @param database stores current status of program
+     * @return array list of sorted movies
+     */
     private ArrayList<Movie> getSortedMovies(final Database database) {
         ArrayList<Movie> movies = new ArrayList<>(database.getMoviesData());
 
@@ -79,6 +92,14 @@ public final class Recommendation implements Observer {
         return movies;
     }
 
+    /**
+     *
+     * @param genres contains sorted list of genres
+     * @param movies contains sorted list of movies
+     * @param user contains user for which recommendation is done
+     * @return name of movie recommended, or "no recommendation" if
+     *         movie was found to recommend
+     */
     private String recommendedMovie(final ArrayList<String> genres,
                                     final ArrayList<Movie> movies,
                                     final User user) {

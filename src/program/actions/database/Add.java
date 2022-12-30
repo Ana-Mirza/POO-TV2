@@ -113,6 +113,12 @@ public final class Add extends Feature implements Action {
         return false;
     }
 
+    /**
+     * Method updates user's list of movie with current movie
+     * added, if not banned
+     * @param database stores current status of program
+     * @param movie is newly added movie
+     */
     private void updateUser(final Database database, final Movie movie) {
         if (database.getCurrentUser() != null
                 && !movie.getCountriesBanned().contains(

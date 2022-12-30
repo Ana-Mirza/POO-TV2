@@ -6,7 +6,7 @@ import program.util.Database;
 
 public final class Upgrades extends Page {
 
-    // constructor
+    /* constructor */
     public Upgrades(final Database data) {
         super("upgrades", data.getCurrentUser());
         if (data.getCurrentPage().getName().equals("homepage autentificat")) {

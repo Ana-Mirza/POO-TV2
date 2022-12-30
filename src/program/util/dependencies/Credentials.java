@@ -9,7 +9,7 @@ public final class Credentials {
     private String country;
     private String balance;
 
-    // constructor
+    /* constructor */
     public Credentials(final CredentialsInput input) {
         name = input.getName();
         password = input.getPassword();
@@ -18,7 +18,7 @@ public final class Credentials {
         balance = input.getBalance();
     }
 
-    // getters and setters
+    /* getters and setters */
     public String getName() {
         return name;
     }

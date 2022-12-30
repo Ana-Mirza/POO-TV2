@@ -137,7 +137,7 @@ public final class Watch extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page and save output
+        /* visit page and save output */
         data.getCurrentPage().accept(this);
         if (display) {
             output.add(node);

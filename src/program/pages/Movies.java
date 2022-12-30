@@ -6,7 +6,7 @@ import program.util.dataprocessing.FilterStrategy;
 import program.util.dependencies.Filters;
 
 public final class Movies extends Page {
-    // constructor
+    /* constructor */
     public Movies(final Database data) {
         super("movies", data.getCurrentUser(), data.getUserMovies());
         super.getAccesiblePages().add("homepage autentificat");

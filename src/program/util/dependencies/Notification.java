@@ -4,7 +4,7 @@ public final class Notification {
     private String movieName;
     private String message;
 
-    // constructor
+    /* constructor */
     public Notification() { }
 
     public Notification(final String movieName, final String message) {
@@ -12,7 +12,7 @@ public final class Notification {
         this.message = message;
     }
 
-    // getters and setters
+    /* getters and setters */
     public String getMovieName() {
         return movieName;
     }

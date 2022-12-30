@@ -13,7 +13,7 @@ import program.util.Database;
 import program.util.dependencies.Notification;
 
 public final class Program {
-    // Singleton Pattern
+    /* Singleton Pattern */
     private static Program instance = null;
     private Program() { }
 
@@ -39,19 +39,19 @@ public final class Program {
     public void start(final Input inputData, final ArrayNode output) {
         Database data = new Database(inputData);
 
-        // add notification observers
+        /* add notification observers */
         data.addObserver(new AddNotification());
         data.addObserver(new DeleteNotification());
         data.addObserver(new Recommendation());
 
-        // parse actions
+        /* parse actions */
         for (ActionsInput action: inputData.getActions()) {
             Action myAction = ActionFactory.createAction(action);
             assert myAction != null;
             myAction.apply(data, output);
         }
 
-        // send recommendations
+        /* send recommendations */
         data.setChangedData();
         data.notifyObservers(new Notification(
                     "No recommendation", "Recommendation"));

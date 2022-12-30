@@ -14,7 +14,7 @@ public class StandardOutput extends OutputStrategy {
     public static void set(final ObjectNode node, final Page page) {
         ObjectMapper mapper = new ObjectMapper();
 
-        // set standard output
+        /* set standard output */
         node.set("error", null);
         node.set("currentMoviesList", mapper.valueToTree(page.getUserMovies()));
         node.set("currentUser", mapper.valueToTree(page.getCurrentUser()));

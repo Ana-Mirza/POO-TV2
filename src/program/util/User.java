@@ -24,7 +24,7 @@ public final class User {
     @JsonIgnore
     private HashMap<String, Integer> ratings;
 
-    // constructor
+    /* constructors */
     public User() { }
 
     public User(final UsersInput user) {
@@ -55,7 +55,7 @@ public final class User {
         ratings = new HashMap<>();
     }
 
-    // getters and setters
+    /* getters and setters */
     public Credentials getCredentials() {
         return credentials;
     }
@@ -132,7 +132,7 @@ public final class User {
         return ratings;
     }
 
-    // get type of account
+    /* get type of account */
     private boolean getAccount(final Credentials credentials) {
         String premium = "premium";
         return premium.equals(credentials.getAccountType());

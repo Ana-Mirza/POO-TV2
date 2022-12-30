@@ -3,7 +3,7 @@ package program.pages;
 import program.actions.Action;
 
 public final class Logout extends Page {
-    // constructor
+    /* constructor */
     public Logout() {
         super("logout");
     }

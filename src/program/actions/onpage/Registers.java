@@ -28,7 +28,7 @@ public final  class Registers extends Feature implements Action {
     private Database database;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public Registers(final ActionsInput input) {
         super(input);
         this.credentials = new Credentials(input.getCredentials());
@@ -92,7 +92,7 @@ public final  class Registers extends Feature implements Action {
      */
     @Override
     public void visit(final Register page) {
-        // check if name is already in database
+        /* check if name is already in database */
         if (nameAlreadyExists(credentials, database.getUsersData())) {
             ErrorOutput.set(node);
             database.setCurrentPage(PageFactory.createPage(
@@ -100,22 +100,22 @@ public final  class Registers extends Feature implements Action {
             return;
         }
 
-        // save new user in database
+        /* save new user in database */
         database.getUsersData().add(new User(credentials));
         int size = database.getUsersData().size();
         database.setCurrentUser(database.getUsersData().get(size - 1));
         database.getCurrentPage().setCurrentUser(database.getCurrentUser());
 
-        // set new page
+        /* set new page */
         database.setCurrentPage(PageFactory.createPage(
                 "homepage autentificat", database));
 
-        // set user movie list by removing banned movies
+        /* set user movie list by removing banned movies */
         database.setUserMovies(new ArrayList<>(database.getMoviesData()));
         database.getUserMovies().removeIf(
                 (movie) -> movieBanned(database.getCurrentUser(), movie));
 
-        // set output
+        /* set output */
         StandardOutput.set(node, database.getCurrentPage());
     }
 
@@ -150,7 +150,7 @@ public final  class Registers extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page
+        /* visit page */
         this.database = data;
         data.getCurrentPage().accept(this);
         output.add(node);
@@ -165,7 +165,7 @@ public final  class Registers extends Feature implements Action {
      */
     private boolean nameAlreadyExists(final Credentials credentials,
                                       final ArrayList<User> users) {
-        // check if name already exists in database
+        /* check if name already exists in database */
         for (User user: users) {
             if (user.getCredentials().getName().equals(credentials.getName())) {
                 return true;

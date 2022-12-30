@@ -18,7 +18,7 @@ public final class Movie {
     private int ratingSum;
     private int numRatings;
 
-    // constructor
+    /* constructor */
     public Movie(final MoviesInput input) {
         name = input.getName();
         year = String.valueOf(input.getYear());
@@ -32,7 +32,7 @@ public final class Movie {
         ratingSum = 0;
     }
 
-    // getters and setters
+    /* getters and setters */
     public String getName() {
         return name;
     }

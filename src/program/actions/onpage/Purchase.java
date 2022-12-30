@@ -22,7 +22,7 @@ import program.util.Movie;
 public final class Purchase extends Feature implements Action {
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public Purchase(final ActionsInput input) {
         super(input);
     }
@@ -108,7 +108,7 @@ public final class Purchase extends Feature implements Action {
     public void visit(final SeeDetails page) {
         final int moviePrice = 2;
 
-        // check if user does not have enough tokens
+        /* check if user does not have enough tokens */
         if ((!page.getCurrentUser().isPremium()
                 && page.getCurrentUser().getTokensCount() < moviePrice)
                 || (page.getCurrentUser().getNumFreePremiumMovies() == 0
@@ -117,28 +117,28 @@ public final class Purchase extends Feature implements Action {
             return;
         }
 
-        // check if movie was previously bought
+        /* check if movie was previously bought */
         Movie movie = page.getUserMovies().get(0);
         if (page.getCurrentUser().getPurchasedMovies().contains(movie)) {
             ErrorOutput.set(node);
             return;
         }
 
-        // purchase movie
+        /* purchase movie */
         page.getCurrentUser().getPurchasedMovies().add(movie);
 
-        // update free movies left if user is premium and has free movies
+        /* update free movies left if user is premium and has free movies */
         if (page.getCurrentUser().isPremium()
                 && page.getCurrentUser().getNumFreePremiumMovies() > 0) {
             int currentFreeMovies = page.getCurrentUser().getNumFreePremiumMovies();
             page.getCurrentUser().setNumFreePremiumMovies(currentFreeMovies - 1);
         } else {
-            // update tokens of user
+            /* update tokens of user */
             int currentTokens = page.getCurrentUser().getTokensCount();
             page.getCurrentUser().setTokensCount(currentTokens - moviePrice);
         }
 
-        // save output
+        /* save output */
         StandardOutput.set(node, page);
     }
 
@@ -153,7 +153,7 @@ public final class Purchase extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page and save output
+        /* visit page and save output */
         data.getCurrentPage().accept(this);
         output.add(node);
     }

@@ -20,26 +20,26 @@ public class Database extends Observable {
     private ArrayList<Movie> userMovies;
     private LinkedList<Page> prevPages;
 
-    // constructor
+    /* constructor */
     public Database(final Input input) {
         // add database of users
         usersData = new ArrayList<>();
         input.getUsers().forEach((user) ->
                 usersData.add(new User(user)));
 
-        // add database of movies
+        /* add database of movies */
         moviesData = new ArrayList<>();
         input.getMovies().forEach((movie) ->
                 moviesData.add(new Movie(movie)));
 
-        // set current page
+        /* set current page */
         currentPage = PageFactory.createPage("homepage neautentificat", this);
 
-        // set stack of pages
+        /* set stack of pages */
         prevPages = new LinkedList<>();
     }
 
-    // getters and setters
+    /* getters and setters */
     public final ArrayList<User> getUsersData() {
         return usersData;
     }

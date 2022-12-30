@@ -21,7 +21,7 @@ public final class BuyPremiumAccount extends Feature implements Action {
     private boolean displayOutput;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public BuyPremiumAccount(final ActionsInput input) {
         super(input);
         displayOutput = false;
@@ -104,13 +104,13 @@ public final class BuyPremiumAccount extends Feature implements Action {
         int currentTokens = page.getCurrentUser().getTokensCount();
         final int premiumPrice = 10;
 
-        // check if user has enough tokens to buy premium account
+        /* check if user has enough tokens to buy premium account */
         if (currentTokens < premiumPrice) {
             ErrorOutput.set(node);
             displayOutput = true;
         }
 
-        // buy premium account
+        /* buy premium account */
         page.getCurrentUser().setTokensCount(currentTokens - premiumPrice);
         page.getCurrentUser().setPremium(true);
         page.getCurrentUser().getCredentials().setAccountType("premium");
@@ -139,7 +139,7 @@ public final class BuyPremiumAccount extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page
+        /* visit page */
         data.getCurrentPage().accept(this);
         if (displayOutput) {
             output.add(node);

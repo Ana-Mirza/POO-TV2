@@ -28,7 +28,7 @@ public abstract class ActionFactory {
             case "subscribe" -> new Subscribe(actions);
             case "back" -> new Back();
 
-            // on page actions
+            /* on page actions */
             case "on page" -> switch (actions.getFeature()) {
                 case "register" -> new Registers(actions);
                 case "login" -> new Logins(actions);
@@ -43,7 +43,7 @@ public abstract class ActionFactory {
                 default -> null;
             };
 
-            // database actions
+            /* database actions */
             case "database" -> switch (actions.getFeature()) {
                 case "add" -> new Add(actions);
                 case "delete" -> new Delete(actions);

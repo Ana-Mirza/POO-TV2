@@ -3,7 +3,7 @@ package program.pages;
 import program.actions.Action;
 
 public final class UnloggedHomepage extends Page {
-    // constructor
+    /* constructor */
     public UnloggedHomepage() {
         super("homepage neautentificat");
         super.getAccesiblePages().add("login");

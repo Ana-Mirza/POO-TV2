@@ -4,6 +4,7 @@ import program.actions.Action;
 import program.util.Database;
 
 public final class SeeDetails extends Page {
+    /* constructor */
     public SeeDetails(final Database data) {
         super("see details", data.getCurrentUser(),
                 data.getCurrentPage().getUserMovies());

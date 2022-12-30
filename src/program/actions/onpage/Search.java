@@ -25,7 +25,7 @@ public final class Search extends Feature implements Action {
     private Database database;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public Search(final ActionsInput input) {
         super(input);
         startsWith = input.getStartsWith();
@@ -78,11 +78,11 @@ public final class Search extends Feature implements Action {
      */
     @Override
     public void visit(final Movies page) {
-        // set user movies
+        /* set user movies */
         page.setUserMovies(new ArrayList<>(database.getUserMovies()));
         page.getUserMovies().removeIf((movie) -> !movie.getName().startsWith(startsWith));
 
-        // set output
+        /* set output */
         StandardOutput.set(node, page);
     }
 
@@ -127,7 +127,7 @@ public final class Search extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page and save output
+        /* visit page and save output */
         this.database = data;
         data.getCurrentPage().accept(this);
         output.add(node);

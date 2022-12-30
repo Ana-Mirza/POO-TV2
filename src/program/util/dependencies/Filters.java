@@ -6,6 +6,7 @@ public final class Filters {
     private Sort sort;
     private Contains contains;
 
+    /* constructor */
     public Filters(final FiltersInput input) {
         if (input.getSort() != null) {
             sort = new Sort(input.getSort());
@@ -16,6 +17,7 @@ public final class Filters {
         }
     }
 
+    /* getters and setters */
     public Sort getSort() {
         return sort;
     }

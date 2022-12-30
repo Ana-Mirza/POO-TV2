@@ -14,7 +14,7 @@ public class ErrorOutput extends OutputStrategy {
     public static void set(final ObjectNode node) {
         ObjectMapper mapper = new ObjectMapper();
 
-        // set error output
+        /* set error output */
         node.put("error", "Error");
         node.set("currentMoviesList", mapper.valueToTree(new ArrayList<String>()));
         node.set("currentUser", null);

@@ -6,13 +6,13 @@ public final class Sort {
     private String rating;
     private String duration;
 
-    // constructor
+    /* constructor */
     public Sort(final SortInput input) {
         rating = input.getRating();
         duration = input.getDuration();
     }
 
-    // getters and setters
+    /* getters and setters */
     public String getRating() {
         return rating;
     }

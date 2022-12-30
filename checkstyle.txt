@@ -9,7 +9,7 @@ Starting audit...
 [ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\changepage\ChangePage.java:97:40: 'page' hides a field. [HiddenField]
 [ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\changepage\ChangePage.java:99:40: 'movie' hides a field. [HiddenField]
 [ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\database\Add.java:108:20: 'movie' hides a field. [HiddenField]
-[ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\database\Add.java:116:66: 'movie' hides a field. [HiddenField]
+[ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\database\Add.java:122:66: 'movie' hides a field. [HiddenField]
 [ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\onpage\Logins.java:165:53: 'credentials' hides a field. [HiddenField]
 [ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\actions\onpage\Registers.java:166:57: 'credentials' hides a field. [HiddenField]
 [ERROR] C:\Users\anami\OneDrive - Universitatea Politehnica Bucuresti\facultate\anul 2\oop\IdeaProjects\POO-TV2\.\src\program\util\User.java:34:32: '15' is a magic number. [MagicNumber]

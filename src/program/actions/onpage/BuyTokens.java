@@ -22,7 +22,7 @@ public final class BuyTokens extends Feature implements Action {
     private boolean displayOutput;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public BuyTokens(final ActionsInput input) {
         super(input);
         displayOutput = false;
@@ -106,18 +106,18 @@ public final class BuyTokens extends Feature implements Action {
         int totalBalance = Integer.parseInt(
                 page.getCurrentUser().getCredentials().getBalance());
 
-        // check balance
+        /* check balance */
         if (totalBalance < count) {
             ErrorOutput.set(node);
             displayOutput = true;
             return;
         }
 
-        // update balance
+        /* update balance */
         totalBalance -= count;
         page.getCurrentUser().getCredentials().setBalance(String.valueOf(totalBalance));
 
-        // update tokens
+        /* update tokens */
         int currentTokens = page.getCurrentUser().getTokensCount();
         page.getCurrentUser().setTokensCount(currentTokens + count);
     }
@@ -144,7 +144,7 @@ public final class BuyTokens extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page and display output
+        /* visit page and display output */
         data.getCurrentPage().accept(this);
         if (displayOutput) {
             output.add(node);

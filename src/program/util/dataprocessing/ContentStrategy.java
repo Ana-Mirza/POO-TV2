@@ -16,12 +16,12 @@ public final class ContentStrategy implements FilterStrategy {
     public void filter(final Filters input, final Page page) {
         Contains contains = input.getContains();
 
-        // check if contains filter exists
+        /* check if contains filter exists */
         if (contains == null) {
             return;
         }
 
-        // delete movies not containing given actors
+        /* delete movies not containing given actors */
         if (contains.getActors() != null) {
             for (String actor: contains.getActors()) {
                 page.getUserMovies().removeIf((movie) ->
@@ -29,7 +29,7 @@ public final class ContentStrategy implements FilterStrategy {
             }
         }
 
-        // delete movies not having given genres
+        /* delete movies not having given genres */
         if (contains.getGenres() != null) {
             for (String genre: contains.getGenres()) {
                 page.getUserMovies().removeIf((movie) ->

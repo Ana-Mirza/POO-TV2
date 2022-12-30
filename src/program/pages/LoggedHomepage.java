@@ -4,7 +4,7 @@ import program.actions.Action;
 import program.util.Database;
 
 public final class LoggedHomepage extends Page {
-    // constructor
+    /* constructor */
     public LoggedHomepage(final Database data) {
         super("homepage autentificat", data.getCurrentUser());
         super.getAccesiblePages().add("movies");

@@ -25,7 +25,7 @@ public final class Rate extends Feature implements Action {
     private final int rating;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public Rate(final ActionsInput input) {
         super(input);
         rating = input.getRate();
@@ -114,32 +114,32 @@ public final class Rate extends Feature implements Action {
         final int minRating = 1;
         final int maxRating = 5;
 
-        // check if movie was watched and if rating is valid
+        /* check if movie was watched and if rating is valid */
         if (!watchedMovie(movie, page.getCurrentUser().getWatchedMovies())
                 || rating < minRating || rating > maxRating) {
             ErrorOutput.set(node);
             return;
         }
 
-        // check if movie was rated before
+        /* check if movie was rated before */
         if (!page.getCurrentUser().getRatedMovies().contains(movie)) {
             movie.setRatingSum(movie.getRatingSum() + rating);
             movie.setNumRatings(movie.getNumRatings() + 1);
             movie.setRating((movie.getRatingSum() / (double) movie.getNumRatings()));
             page.getCurrentUser().getRatedMovies().add(movie);
 
-            // save rating for movie
+            /* save rating for movie */
             page.getCurrentUser().getRatings().put(movie.getName(), rating);
         } else {
             int oldRating = page.getCurrentUser().getRatings().get(movie.getName());
             page.getCurrentUser().getRatings().put(movie.getName(), rating);
 
-            // calculate new rating
+            /* calculate new rating */
             movie.setRatingSum(movie.getRatingSum() - oldRating + rating);
             movie.setRating(movie.getRatingSum() / (double) movie.getNumRatings());
         }
 
-        // save output
+        /* save output */
         StandardOutput.set(node, page);
     }
 
@@ -154,7 +154,7 @@ public final class Rate extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page
+        /* visit page */
         data.getCurrentPage().accept(this);
         output.add(node);
     }

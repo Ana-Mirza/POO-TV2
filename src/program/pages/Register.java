@@ -3,7 +3,7 @@ package program.pages;
 import program.actions.Action;
 
 public final class Register extends Page {
-    // constructor
+    /* constructor */
     public Register() {
         super("register");
         super.getActionsPermitted().add("register");

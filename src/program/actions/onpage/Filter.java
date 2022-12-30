@@ -28,7 +28,7 @@ public final class Filter extends Feature implements Action {
     private Database database;
     private ObjectNode node;
 
-    // constructor
+    /* constructor */
     public Filter(final ActionsInput input) {
         super(input);
         filters = new Filters(input.getFilters());
@@ -86,13 +86,13 @@ public final class Filter extends Feature implements Action {
             page.setUserMovies(new ArrayList<>(database.getUserMovies()));
         }
 
-        // filter by input
+        /* filter by input */
         page.filter(new ContentStrategy(), filters);
 
-        // sort by rating
+        /* sort by rating */
         page.filter(new SortStrategy(), filters);
 
-        // set output node
+        /* set output node */
         StandardOutput.set(node, page);
     }
 
@@ -138,7 +138,7 @@ public final class Filter extends Feature implements Action {
         ObjectMapper mapper = new ObjectMapper();
         node = mapper.createObjectNode();
 
-        // visit page and save output for display
+        /* visit page and save output for display */
         this.database = data;
         data.getCurrentPage().accept(this);
         output.add(node);

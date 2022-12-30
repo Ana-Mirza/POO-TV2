@@ -8,7 +8,7 @@ public final class Contains {
     private ArrayList<String> actors;
     private ArrayList<String> genres;
 
-    // constructor
+    /* constructor */
     public Contains(final ContainsInput input) {
         if (input.getActors() != null) {
             actors = new ArrayList<>(input.getActors());
@@ -19,7 +19,7 @@ public final class Contains {
         }
     }
 
-    // getters and setters
+    /* getters and setters */
     public ArrayList<String> getActors() {
         return actors;
     }

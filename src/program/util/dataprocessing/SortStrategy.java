@@ -18,12 +18,12 @@ public final class SortStrategy implements FilterStrategy {
     public void filter(final Filters input, final Page page) {
         Sort sort = input.getSort();
 
-        // check if sorting method exists
+        /* check if sorting method exists */
         if (sort == null) {
             return;
         }
 
-        // sort based on duration first, then by rating
+        /* sort based on duration first, then by rating */
         if (sort.getRating().equals("increasing")
                 && sort.getDuration() == null) {
             page.getUserMovies().sort(Comparator.comparingDouble(Movie::getRating));

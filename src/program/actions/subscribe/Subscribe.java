@@ -22,7 +22,7 @@ public final class Subscribe implements Action {
     private final String genre;
     private boolean display;
 
-    // constructor
+    /* constructor */
     public Subscribe(final ActionsInput input) {
         genre = input.getSubscribedGenre();
         display = true;
