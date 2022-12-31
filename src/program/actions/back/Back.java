@@ -36,7 +36,8 @@ public final class Back implements Action {
     }
 
     /**
-     * Method saves output
+     * Method saves error as output. The user can not
+     * go back to this page.
      * @param page stores page visited
      */
     @Override
@@ -45,7 +46,8 @@ public final class Back implements Action {
     }
 
     /**
-     * Method saves output
+     * Method saves error as output. The user can not
+     * go back to this page.
      * @param page stores page visited
      */
     @Override
@@ -54,7 +56,8 @@ public final class Back implements Action {
     }
 
     /**
-     * Method saves output
+     * Method saves error as output. The user can not
+     * go back to this page.
      * @param page stores page visited
      */
     @Override
@@ -72,7 +75,8 @@ public final class Back implements Action {
     }
 
     /**
-     * Method saves output
+     * Method saves error as output. The user can not
+     * go back to this page.
      * @param page stores page visited
      */
     @Override
