@@ -1,4 +1,4 @@
-package program.actions.subscribe;
+package program.actions.onpage;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;

@@ -15,7 +15,7 @@ import program.actions.onpage.Rate;
 import program.actions.onpage.BuyPremiumAccount;
 import program.actions.onpage.BuyTokens;
 import program.actions.database.Delete;
-import program.actions.subscribe.Subscribe;
+import program.actions.onpage.Subscribe;
 
 public abstract class ActionFactory {
     /**
@@ -25,7 +25,6 @@ public abstract class ActionFactory {
     public static Action createAction(final ActionsInput actions) {
         return switch (actions.getType()) {
             case "change page" -> new ChangePage(actions);
-            case "subscribe" -> new Subscribe(actions);
             case "back" -> new Back();
 
             /* on page actions */
@@ -40,6 +39,7 @@ public abstract class ActionFactory {
                 case "rate" -> new Rate(actions);
                 case "buy premium account" -> new BuyPremiumAccount(actions);
                 case "buy tokens" -> new BuyTokens(actions);
+                case "subscribe" -> new Subscribe(actions);
                 default -> null;
             };
 

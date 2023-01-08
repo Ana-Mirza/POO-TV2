@@ -116,11 +116,9 @@ public final class Watch extends Feature implements Action {
         }
 
         // add movie in list of watched movies if not watched
-        if (page.getCurrentUser().getWatchedMovies().contains(movie)) {
-            display = false;
-            return;
+        if (!page.getCurrentUser().getWatchedMovies().contains(movie)) {
+            page.getCurrentUser().getWatchedMovies().add(movie);
         }
-        page.getCurrentUser().getWatchedMovies().add(movie);
 
         // set output
         StandardOutput.set(node, page);
