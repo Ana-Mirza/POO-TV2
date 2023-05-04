@@ -53,7 +53,7 @@ the platform, and total users registered. In addition, the database
 keeps a stack with pages visited by a logged user in order to allow
 him to go back.
 
-### Flow of the game
+### Flow of the Platform
 The platform is initialized at the beginning using a Singleton pattern
 and initializes the database of the platform. In order to execute the
 actions given by the user, the program uses a 'for' structure to
